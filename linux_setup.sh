@@ -98,7 +98,7 @@ echo "chown $APACHE_USER:$APACHE_GROUP $PHPMINER_DB_CFG_PATH" | sh
 echo "Install cronjob."
 echo "# /etc/cron.d/phpminer: crontab fragment for phpminer" > /etc/cron.d/phpminer
 echo "#  This will run the cronjob script for phpminer to send notifications and other periodic tasks." >> /etc/cron.d/phpminer
-echo "* * * * * $APACHE_USER php -f $PHPMINER_PATH/cron.php" >>  /etc/cron.d/phpminer
+echo "* * * * * $APACHE_USER cd $PHPMINER_PATH/; php -f cron.php" >>  /etc/cron.d/phpminer
 
 # Install apache vhost
 echo "Install apache2 vhost."
